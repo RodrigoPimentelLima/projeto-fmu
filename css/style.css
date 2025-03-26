@@ -13,14 +13,19 @@ body {
 
 
 header {
-    background-color: #111111;
+    background: linear-gradient(90deg, rgba(190,192,213,1) 25%, rgba(58,18,135,1) 77%, rgba(92,225,230,1) 100%);
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-header img {
-    width: 180px;
+
+
+header P {
+    width: 150PX;
+    font-weight: bold;
+    text-transform: capitalize;
+    
 }
 
 header ul {
@@ -40,7 +45,7 @@ header a {
 }
 
 header a:hover {
-    color: #f12239;
+    color: #000000;
 }
 
 /* login */
@@ -50,7 +55,9 @@ header a:hover {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(https://blog.primusconsultoria.com.br/wp-content/uploads/2021/08/businesspeople-working-in-finance-and-accounting-analyze-financi-2048x1349.jpg);
+    background-image: url(../src/images/finanfmu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .content {
@@ -66,7 +73,7 @@ header a:hover {
 .content::before {
     content: "";
     position: absolute;
-    background-color: #58af9b;
+    background-color: #3a1287;
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -86,7 +93,7 @@ header a:hover {
     color: #fff;
 }
 .title-second {
-    color: #58af9b;
+    color:#3a1287;
 }
 
 .description {
@@ -126,19 +133,19 @@ header a:hover {
 
 .btn-primary:hover {
     background-color: #fff;
-    color: #58af9b;
+    color: #3a1287;
 }
 
 .btn-second {
-    background-color: #58af9b;
-    border: 1px solid #58af9b;
+    background-color:#3a1287;
+    border: 1px solid #3a1287;
     transition: background-color .5s;
 }
 
 .btn-second:hover {
     background-color: #fff;
-   border: 1px solid #58af9b;
-   color: #58af9b;
+   border: 1px solid #3a1287;
+   color: #3a1287;
 }
 
 .first-content {
@@ -189,9 +196,9 @@ header a:hover {
 }
 
 .link-social-media:hover .item-social-media{
-    background-color: #58af9b;
+    background-color: #3a1287;
     color: #fff;
-    border-color: #58af9b;
+    border-color:#3a1287;
 }
 
 .form {
@@ -297,7 +304,7 @@ z-index: 13;
 
     z-index:  -1;
     position: relative;
-    animation: deslocamentoesq 3s;
+    animation: deslocamentoesq .1s;
 }
 
 .sign-up-js .second-content .second-column{
