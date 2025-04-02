@@ -60,6 +60,30 @@ header a:hover {
     background-size: cover;
 }
 
+.btn-simulacao {
+    background-color: #3a1287;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 15px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 15px auto 0;
+    text-decoration: none;
+    transition: background-color 0.5s;
+    
+}
+
+.btn-simulacao:hover {
+    background-color: #fff;
+    color: #3a1287;
+}
+
+
 .content {
     background-color: #fff;
     border-radius: 20px;
@@ -318,111 +342,93 @@ z-index: 13;
 
 @keyframes deslocamentoEsq {
 
-    from {
-        left: 0;
-        opacity: 1;
-        z-index: 12;
+    fro/* Ajuste nas animações */
+    @keyframes slidein {
+        from {
+            left: 0;
+            width: 40%;
+        }
+        50% {
+            left: 30%;
+            width: 50%;
+        }
+        to {
+            left: 60%;
+            width: 40%;
+        }
     }
-
-    25% {
-        left: -80px;
-        opacity: .5;
-    }
-
-    50% {
-        left: -100px;
-        opacity: .2;
-    }
-
-    to {
-        left: -110px;
-        opacity: 0;
-        z-index: -1;
-    }
-}
-
-
-@keyframes deslocamentoDir {
-
-    from {
-        left: 0;
-        z-index: 12;
-    }
-
-    25% {
-        left: 80px;
-        z-index: 12;
-    }
-
-    50% {
-        left: 100px;
-        z-index: 12;
-    }
-
-    to {
-        left: 110px;
-        z-index: -1;
-    }
-
-
-}
-
-/* ANIMAÇÃO CSS */
-
-@keyframes slidein {
-
-from {
-    left: 0;
-    width: 40%;
-}
-
-25% {
-    left: 5%;
-    width: 50%;
-}
-
-50% {
-    left: 25%;
-    width: 60%;
-}
-
-75%{
-    left: 45%;
-    width: 50%;
-}
-
-to {
-    left: 60%;
-    width: 40%;
-}
-
-}
-
-@keyframes slideout {
-
-    from {
+    
+    @keyframes slideout {
+        from {
+            left: 60%;
+            width: 40%;
+        }
+        50% {
+            left: 30%;
+            width: 50%;
+        }
+        to {
+            left: 0;
+            width: 40%;
+        }
+    }}
+    
+    /* Aplicando a transição de forma mais rápida e suave */
+    .sign-in-js .content::before {
         left: 60%;
-        width: 40%;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        animation: slidein 0.6s ease-in-out forwards;
     }
     
-    25% {
-        left: 45%;
-        width: 50%;
+    .sign-up-js .content::before {
+        animation: slideout 1.2s ease-in-out forwards;
     }
     
-    50% {
-        left: 25%;
-        width: 60%;
+    /* Melhorando o deslocamento lateral */
+    @keyframes deslocamentoEsq {
+        from {
+            left: 0;
+            opacity: 1;
+            z-index: 12;
+        }
+        50% {
+            left: -60px;
+            opacity: 0.5;
+        }
+        to {
+            left: -80px;
+            opacity: 0;
+            z-index: -1;
+        }
     }
     
-    75%{
-        left: 5%;
-        width: 50%;
+    @keyframes deslocamentoDir {
+        from {
+            left: 0;
+            z-index: 12;
+        }
+        50% {
+            left: 60px;
+        }
+        to {
+            left: 80px;
+            z-index: -1;
+        }
     }
     
-    to {
-        left: 0;
-        width: 40%;
+    /* Suavizando a transição do conteúdo */
+    .sign-in-js .first-content .second-column {
+        z-index: -1;
+        position: relative;
+        animation: deslocamentoEsq 0.4s ease-in-out forwards;
     }
     
+    .sign-up-js .second-content .second-column {
+        position: relative;
+        z-index: -1;
+        animation: deslocamentoDir 0.4s ease-in-out forwards;
     }
+    

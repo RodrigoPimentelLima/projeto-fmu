@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Investimentos</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Simulador de Investimentos</h2>
+        <label for="valor">Valor Inicial (R$):</label>
+        <input type="number" id="valor" placeholder="Digite o valor inicial">
+        
+        <label for="aporte">Aporte Mensal (R$):</label>
+        <input type="number" id="aporte" placeholder="Digite o valor do aporte mensal">
+        
+        <label for="juros">Taxa de Juros Anual (%):</label>
+        <input type="number" id="juros" placeholder="Digite a taxa de juros">
+        
+        <label for="tempo">Tempo (anos):</label>
+        <input type="number" id="tempo" placeholder="Digite o tempo em anos">
+        
+        <button onclick="calcularInvestimento()">Calcular</button>
+        
+        <h3 id="resultado"></h3>
+    </div>
+
+    <script>
+        function calcularInvestimento() {
+            let valor = parseFloat(document.getElementById('valor').value);
+            let aporte = parseFloat(document.getElementById('aporte').value);
+            let juros = parseFloat(document.getElementById('juros').value) / 100;
+            let tempo = parseInt(document.getElementById('tempo').value);
+            
+            if (isNaN(valor) || isNaN(aporte) || isNaN(juros) || isNaN(tempo)) {
+                document.getElementById('resultado').innerText = "Preencha todos os campos corretamente!";
+                return;
+            }
+            
+            let montante = valor;
+            let meses = tempo * 12;
+            let jurosMensal = Math.pow(1 + juros, 1/12) - 1;
+            
+            for (let i = 0; i < meses; i++) {
+                montante = montante * (1 + jurosMensal) + aporte;
+            }
+            
+            document.getElementById('resultado').innerText = `Montante Final: R$ ${montante.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
