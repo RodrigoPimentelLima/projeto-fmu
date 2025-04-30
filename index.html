@@ -46,23 +46,23 @@
                     </ul>
                 </div>
                 <p class="description description-second">Ou use E-mail para registro</p>
-                <form class="form">
+                <form action="conexao.php" method="POST" class ="form">
                     <label class="label-input" for="">
                         <i class="fa-solid fa-user icon-modify"></i>
-                        <input type="text" placeholder="Name">
+                        <input type="text" name="nome" placeholder="Name">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fa-solid fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" name="Email" placeholder="Email">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fa-solid fa-lock icon-modify"></i>
-                        <input type="password" placeholder="password">
+                        <input type="password" name="password" placeholder="password">
                     </label>
 
-                    <button class="btn btn-second">Inscrever</button>
+                    <button class="btn btn-second" type="submit" name="submit">Inscrever</button>
                     <a href="index2.html" class="btn btn-simulacao">Simulador</a>
                 </label>
                 </form>
@@ -99,25 +99,23 @@
                     </ul>
                 </div>
                 <p class="description description-second">ou use sua conta de e-mail</p>
-                <form class="form">
+                <form action="login.php" method="POST"  class="form">
                     
-
                     <label class="label-input" for="">
                         <i class="fa-solid fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fa-solid fa-lock icon-modify"></i>
-                        <input type="password" placeholder="password">
+                        <input type="password" name="password"  placeholder="password">
                     </label>
 
                     <a class="password" >Esqueceu sua senha?</a>
-                    <button class="btn btn-second">Login</button>
+                    <button class="btn btn-second" type ="submit" name="login" >Login</button>
                     <a href="index2.html" class="btn btn-simulacao">Simulador</a>
                 </label>
                 </form>
-                
             </div>
         </div>
     </div>
